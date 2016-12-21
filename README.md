@@ -8,3 +8,9 @@ Polls the launch folders :
     ~/Library/LaunchAgents/
 
 Installs a command called `olc` if pip installed.
+
+Requires python3.
+
+Installation :
+
+    pip3 install git+https://github.com/ryantownshend/osx_launch_cleaner --upgrade
