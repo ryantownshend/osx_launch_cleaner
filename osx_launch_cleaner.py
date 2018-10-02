@@ -1,11 +1,12 @@
 import os
 import logging
-from pprint import PrettyPrinter
+# from pprint import PrettyPrinter
 
 import click
 import click_log
 
-log = logging.getLogger()
+log = logging.getLogger(__name__)
+click_log.basic_config(log)
 
 
 class OsxLaunchCleaner(object):
@@ -33,12 +34,12 @@ class OsxLaunchCleaner(object):
 
 
 @click.command()
-@click_log.simple_verbosity_option()
-@click_log.init(log)
+@click_log.simple_verbosity_option(log)
 def main():
     log.debug('main')
     olc = OsxLaunchCleaner()
     olc.report()
+
 
 if __name__ == '__main__':
     main()
